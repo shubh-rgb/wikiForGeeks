@@ -1,0 +1,21 @@
+namespace: demo-app
+
+backend:
+  replicaCount: 1
+  image:
+    repository: demo-backend
+    tag: latest
+  service:
+    type: NodePort
+    port: 5000
+    nodePort: 30500
+
+frontend:
+  replicaCount: 1
+  image:
+    repository: demo-frontend
+    tag: latest
+  service:
+    type: NodePort
+    port: 3000
+    nodePort: 30501
